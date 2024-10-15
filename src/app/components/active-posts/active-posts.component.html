@@ -1,0 +1,11 @@
+
+<section class="mb-5">
+  <h3 class="ps-5 mt-3">Active Posts</h3>
+  <div class="container mt-3">
+    <div class="row row-gap-3">
+      <div *ngFor="let singlePost of post" class="col-md-6 col-12">
+        <app-single-post [singlePost] = "singlePost"></app-single-post>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,39 @@
+
+<main class="container">
+  <h2 class="ps-3 mt-3">Featured post</h2>
+  <div class="card border-0 pb-2">
+    <div class="card-body">
+      <h5 class="card-title">{{titleHeader}}</h5>
+      <p class="card-text">{{bodyHeader}}</p>
+      <p>Tags: {{tagsHeader}}</p>
+      <a href="#" class="btn btn-primary">View more</a>
+    </div>
+  </div>
+  <section class="mb-5">
+    <h3 class="ps-3 mt-3">You might also like..</h3>
+    <div class="container mt-3">
+      <div class="row row-gap-3">
+        <div *ngFor="let singlePost of posts" class="col-md-6 col-12">
+          <app-single-post [singlePost]="singlePost">
+            <form>
+              <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" [(ngModel)]="singlePost.title" class="form-control" id="title" name="title">
+              </div>
+              <div class="mb-3">
+                <label for="body" class="form-label">Body</label>
+                <textarea [(ngModel)]="singlePost.body" class="form-control" id="body" name="body"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="tags" class="form-label">Tags</label>
+                <textarea [(ngModel)]="singlePost.tags" class="form-control" id="tags" name="tags"></textarea>
+              </div>
+              <button type="button" class="btn btn-primary">Submit</button>
+            </form>
+          </app-single-post>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
