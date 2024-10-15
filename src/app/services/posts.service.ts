@@ -253,4 +253,19 @@ export class PostsService {
   getAllposts(){
     return this.posts
   }
+  getAllTags() {
+    const tags = new Set<string>();
+// Setgli oggetti sono raccolte di valori.
+// Un valore nel set può verificarsi solo una volta ;
+//è univoco nella raccolta del set.
+//È possibile scorrere gli elementi di un set in ordine di inserimento.
+//L' ordine di inserimento corrisponde all'ordine in cui ogni elemento è stato inserito nel set dal add()metodo con successo (ovvero, non c'era già un elemento identico nel set quando add()è stato chiamato).
+    this.posts.forEach(post => {
+      post.tags.forEach(tag => {
+        tags.add(tag);
+      });
+    });
+
+    return Array.from(tags);
+  }
 }

@@ -1,5 +1,6 @@
 
 <main class="container">
+  <span class=" mt-4 btn btn-outline-secondary m-2" *ngFor="let tag of tags">{{tag}}</span>
   <h2 class="ps-3 mt-3">Featured post</h2>
   <div class="card border-0 pb-2">
     <app-single-post [singlePost]="posts[0]"></app-single-post>

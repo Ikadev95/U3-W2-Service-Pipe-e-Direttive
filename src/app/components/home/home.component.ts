@@ -10,10 +10,13 @@ import { PostsService } from '../../services/posts.service';
 })
 export class HomeComponent implements OnInit{
   posts!: Post[]
+  tags!: string[];
   constructor(private postsSrv: PostsService){}
   post: Post[] = [];
   ngOnInit(){ // caricamento del componente
       this.posts = this.postsSrv.getAllposts()
+      this.tags = this.postsSrv.getAllTags()
+      console.log(this.tags)
 
 
       for ( let i = 1 ; i < this.posts.length; i++){
