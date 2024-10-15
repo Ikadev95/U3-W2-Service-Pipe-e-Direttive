@@ -4,14 +4,7 @@
   <div class="container mt-3">
     <div class="row row-gap-3">
       <div *ngFor="let singlePost of post" class="col-md-6 col-12">
-        <div  class="card shadow">
-          <div class="card-body">
-            <h5 class="card-title">{{singlePost.title}}</h5>
-            <p class="card-text truncate-multi-line">{{singlePost.body}}</p>
-            <p>Tags: {{singlePost.tags}}</p>
-            <a [routerLink]="['/post-detail', singlePost.id]" class="sm-btn btn-outline-secondary">View more</a>
-          </div>
-        </div>
+        <app-single-post [singlePost]="singlePost"></app-single-post>
       </div>
     </div>
   </div>

@@ -2,18 +2,13 @@
 <main class="container">
   <h2 class="ps-3 mt-3">Featured post</h2>
   <div class="card border-0 pb-2">
-    <div class="card-body">
-      <h5 class="card-title">{{titleHeader}}</h5>
-      <p class="card-text">{{bodyHeader}}</p>
-      <p>Tags: {{tagsHeader}}</p>
-      <a href="#" class="btn btn-primary">View more</a>
-    </div>
+    <app-single-post [singlePost]="posts[0]"></app-single-post>
   </div>
   <section class="mb-5">
     <h3 class="ps-3 mt-3">You might also like..</h3>
     <div class="container mt-3">
       <div class="row row-gap-3">
-        <div *ngFor="let singlePost of posts" class="col-md-6 col-12">
+        <div *ngFor="let singlePost of post" class="col-md-6 col-12">
           <app-single-post [singlePost]="singlePost">
             <form>
               <div class="mb-3">

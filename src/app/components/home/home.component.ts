@@ -12,14 +12,9 @@ export class HomeComponent implements OnInit{
   posts!: Post[]
   constructor(private postsSrv: PostsService){}
   post: Post[] = [];
-  titleHeader: string = "";
-  bodyHeader: string = "";
-  tagsHeader: Array<string> = []
   ngOnInit(){ // caricamento del componente
       this.posts = this.postsSrv.getAllposts()
-      this.titleHeader = this.posts[0].title
-      this.bodyHeader = this.posts[0].body
-      this.tagsHeader = this.posts[0].tags
+
 
       for ( let i = 1 ; i < this.posts.length; i++){
         this.post.push(this.posts[i]);
