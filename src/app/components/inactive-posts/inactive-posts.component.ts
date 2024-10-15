@@ -12,7 +12,7 @@ export class InactivePostsComponent {
   constructor(private PostsSvc: PostsService){}
   post: Post[] = [];
   ngOnInit(){ // caricamento del componente
-    this.posts = this.PostsSvc.getAllposts()
+    this.posts = this.PostsSvc.getAllposts('')
     this.post = this.posts.filter(post => post.active === false)
   }
 }

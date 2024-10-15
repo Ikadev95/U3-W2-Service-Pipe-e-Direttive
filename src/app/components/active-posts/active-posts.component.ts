@@ -13,7 +13,7 @@ export class ActivePostsComponent {
     post: Post[] = [];
 
   ngOnInit(){ // caricamento del componente
-    this.posts = this.postsSrv.getAllposts()
+    this.posts = this.postsSrv.getAllposts('')
     this.post = this.posts.filter(post => post.active === true)
 
 }}

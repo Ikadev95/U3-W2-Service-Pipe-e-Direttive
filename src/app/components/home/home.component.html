@@ -1,6 +1,6 @@
 
 <main class="container">
-  <span class=" mt-4 btn btn-outline-secondary m-2" *ngFor="let tag of tags">{{tag}}</span>
+  <span (click)="filterPost(tag)" class="mt-4 btn btn-outline-secondary m-2" *ngFor="let tag of tags">{{tag}}</span>
   <h2 class="ps-3 mt-3">Featured post</h2>
   <div class="card border-0 pb-2">
     <app-single-post [singlePost]="posts[0]"></app-single-post>
@@ -9,7 +9,7 @@
     <h3 class="ps-3 mt-3">You might also like..</h3>
     <div class="container mt-3">
       <div class="row row-gap-3">
-        <div *ngFor="let singlePost of post" class="col-md-6 col-12">
+        <div *ngFor="let singlePost of filteredPosts" class="col-md-6 col-12">
           <app-single-post [singlePost]="singlePost">
             <form>
               <div class="mb-3">

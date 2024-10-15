@@ -250,9 +250,16 @@ export class PostsService {
       "active": true
     }
   ]
-  getAllposts(){
-    return this.posts
+  postFiltered: Post[] = [];
+  getAllposts(param: string) {
+    if (param === '') {
+      return this.posts;
+    } else {
+      const postFiltered = this.posts.filter(post => post.tags.some(tag => tag === param));
+      return postFiltered;
+    }
   }
+
   getAllTags() {
     const tags = new Set<string>();
 // Setgli oggetti sono raccolte di valori.
