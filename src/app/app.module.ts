@@ -10,6 +10,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 import { SinglePostComponent } from './components/single-post/single-post.component';
 import { FormsModule } from '@angular/forms';
+import { ColorDirective } from './directives/color.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     NavbarComponent,
     PostDetailComponent,
-    SinglePostComponent
+    SinglePostComponent,
+    ColorDirective
   ],
   imports: [
     BrowserModule,
